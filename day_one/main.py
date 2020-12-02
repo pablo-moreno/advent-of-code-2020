@@ -17,9 +17,6 @@ class DayOne(object):
     """
     EXPECTED_RESULT = 2020
 
-    def __init__(self, items: list):
-        self.items: list = items
-
     @staticmethod
     def find_two_numbers_that_sum_2020(items: list) -> (int, int):
         """
@@ -68,25 +65,25 @@ class DayOne(object):
 
         return 1, -1, 1
 
-    def solve_first_part(self):
-        items = self.items.copy()
-        a, b = self.find_two_numbers_that_sum_2020(items)
+    @staticmethod
+    def solve_first_part(items):
+        a, b = DayOne.find_two_numbers_that_sum_2020(items)
 
         return a * b
 
-    def solve_second_part(self):
-        items = self.items.copy()
-        a, b, c = self.find_three_numbers_that_sum_2020(items)
+    @staticmethod
+    def solve_second_part(items):
+        a, b, c = DayOne.find_three_numbers_that_sum_2020(items)
 
         return a * b * c
 
 
 def main():
     lines = get_input_items('inputs/day_1.txt')
-    result = DayOne(lines.copy()).solve_first_part()
+    result = DayOne.solve_first_part(lines.copy())
     print(f'The result of the first puzzle is {result}')
 
-    result = DayOne(lines.copy()).solve_second_part()
+    result = DayOne.solve_second_part(lines.copy())
     print(f'The result of the second puzzle is {result}')
 
 

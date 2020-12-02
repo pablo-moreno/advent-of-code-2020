@@ -4,6 +4,15 @@ def get_input(filename):
 
 
 class DayTwo(object):
+    """
+        Day 1, Password Philosophy
+
+        TL; DR:
+        - Given a password list, check if it contains the specified range of the specified letter.
+        - Given a password list, check if the specified letter is placed at one of the positions given.
+
+        https://adventofcode.com/2020/day/2
+    """
     @staticmethod
     def parse_line(line: str) -> (str, str, str):
         constraint_str, password = line.split(':')
