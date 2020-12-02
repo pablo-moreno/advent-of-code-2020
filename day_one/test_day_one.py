@@ -1,5 +1,5 @@
 from unittest import TestCase
-from ..day_one import DayOne
+from . import DayOne
 
 
 class DayOneTestCase(TestCase):
