@@ -68,7 +68,7 @@ class DayTwo(object):
 
 
 def main():
-    lines = get_input('inputs/day_2.txt')
+    lines = get_input('inputs/day_02.txt')
     result = DayTwo.solve_first_part(lines)
     print(f'The result of the first puzzle is {result}')
 

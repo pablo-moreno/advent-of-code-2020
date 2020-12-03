@@ -79,7 +79,7 @@ class DayOne(object):
 
 
 def main():
-    lines = get_input_items('inputs/day_1.txt')
+    lines = get_input_items('inputs/day_01.txt')
     result = DayOne.solve_first_part(lines.copy())
     print(f'The result of the first puzzle is {result}')
 

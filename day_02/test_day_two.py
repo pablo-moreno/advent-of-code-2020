@@ -2,7 +2,7 @@ from unittest import TestCase
 from . import DayTwo
 
 
-class DayOneTestCase(TestCase):
+class DayTwoTestCase(TestCase):
     def test_first_part_valid_passwords(self):
         line = '1-3 a: abcdef'
         letter, letter_range, password = DayTwo.parse_line(line)
