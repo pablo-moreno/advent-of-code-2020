@@ -5,7 +5,7 @@ def get_input(filename):
 
 class DayTwo(object):
     """
-        Day 1, Password Philosophy
+        Day 2, Password Philosophy
 
         TL; DR:
         - Given a password list, check if it contains the specified range of the specified letter.

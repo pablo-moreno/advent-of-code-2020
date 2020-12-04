@@ -1,0 +1,8 @@
+[run]
+branch = true
+source = .
+omit =
+  */**/inputs/*
+  */**/test_*
+  */src/*
+  */venv/*

@@ -1,6 +1,7 @@
 attrs==20.3.0
 certifi==2020.11.8
 chardet==3.0.4
+coverage==5.3
 idna==2.10
 iniconfig==1.1.1
 packaging==20.7
@@ -8,6 +9,9 @@ pluggy==0.13.1
 py==1.9.0
 pyparsing==2.4.7
 pytest==6.1.2
+pytest-cov==2.10.1
+pytest-cover==3.0.0
+pytest-coverage==0.0
 requests==2.25.0
 toml==0.10.2
 urllib3==1.26.2
