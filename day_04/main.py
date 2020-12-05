@@ -21,6 +21,12 @@ class Passport(object):
 
 
 class ValidationCriteria(object):
+    """
+        Base class for validation criteria.
+
+        You can subclass this object and override .is_valid() to create
+        custom validation criteria to check an instance.
+    """
     def __init__(self, instance):
         self.instance = instance
 
@@ -29,10 +35,21 @@ class ValidationCriteria(object):
 
 
 class ValidationCriteriaMixin(object):
+    """
+        This mixin provides validation criteria to a class.
+
+        Specify the criteria_classes and use .is_valid() to check if the instance meets all the criteria.
+    """
     criteria_classes: Tuple[Type[ValidationCriteria]] = ()
 
+    def get_criteria_classes(self) -> Tuple[Type[ValidationCriteria]]:
+        if not self.criteria_classes:
+            raise NotImplementedError('You must specify criteria_classes or override get_criteria_classes().')
+
+        return self.criteria_classes
+
     def is_valid(self) -> bool:
-        for criteria in self.criteria_classes:
+        for criteria in self.get_criteria_classes():
             is_valid = criteria(self).is_valid()
 
             if not is_valid:
@@ -132,6 +149,13 @@ class SecondPartPassportValidation(PassportValidation):
 
 
 class DayFour(object):
+    """
+        Day 4, Passport Processing
+        https://adventofcode.com/2020/day/4
+
+        - You have to validate passports that must include all fields (byr, iyr, eyr, hgt, hcl, ecl, pid) properly
+        - You have to validate passports that meet field-scope criteria.
+    """
     @staticmethod
     def parse_data(input_data: str, part=1) -> List[PassportValidation]:
         passports_raw_data = input_data.split('\n\n')
